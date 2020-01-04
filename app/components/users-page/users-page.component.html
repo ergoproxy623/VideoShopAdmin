@@ -1,0 +1,202 @@
+<app-switch-info></app-switch-info>
+
+<mat-tab-group>
+    <mat-tab label="Оплачен первый блок">
+        <ng-template mat-tab-label>
+            Оплачен один ({{ usersBoughtOneBlock.length }})
+        </ng-template>
+
+        <table mat-table [dataSource]="usersBoughtOneBlock">
+
+            <ng-container matColumnDef='user' sticky>
+                <th mat-header-cell *matHeaderCellDef>Имя</th>
+                <td mat-cell *matCellDef="let user">
+                    {{ user.name + ' ' + user.last_name }}
+                </td>
+            </ng-container>
+
+            <ng-container matColumnDef='email'>
+                <th mat-header-cell *matHeaderCellDef>Email</th>
+                <td mat-cell *matCellDef="let user">
+                    {{ user.email }}
+                </td>
+            </ng-container>
+
+            <ng-container matColumnDef='telephone'>
+                <th mat-header-cell *matHeaderCellDef>Телефон</th>
+                <td mat-cell *matCellDef="let user">
+                    {{ user.telephone }}
+                </td>
+            </ng-container>
+
+            <ng-container matColumnDef='infoBaing'>
+                <th mat-header-cell *matHeaderCellDef>Оплата</th>
+                <td mat-cell *matCellDef="let user">
+                  <p *ngIf="user.purchase.length > 0"> Блок
+                        {{ user.purchase[0]['status'] }}
+                    </p>
+                    <p *ngIf="user.purchase.length > 0">
+                        {{ user.purchase[0]['created_at'] }}
+                    </p>
+                    <p *ngIf="user.purchase.length > 0">
+                        {{ user.purchase[0]['payment_system'] }}
+                    </p>
+                </td>
+            </ng-container>
+
+            <ng-container matColumnDef='createdAt'>
+                <th mat-header-cell *matHeaderCellDef>Регистрация</th>
+                <td mat-cell *matCellDef="let user">
+                    {{ user.created_at }}
+                </td>
+            </ng-container>
+
+            <tr mat-header-row *matHeaderRowDef="columns; sticky: true"></tr>
+            <tr mat-row *matRowDef="let row; columns: columns;"></tr>
+        </table>
+    </mat-tab>
+
+    <mat-tab label="Оплачено оба блока">
+        <ng-template mat-tab-label>
+            Оплачено оба ({{ usersBoughtTwoBlock.length }})
+        </ng-template>
+
+        <table mat-table [dataSource]="usersBoughtTwoBlock">
+
+            <ng-container matColumnDef='user' sticky>
+                <th mat-header-cell *matHeaderCellDef>Имя</th>
+                <td mat-cell *matCellDef="let user">
+                    {{ user.name + ' ' + user.last_name }}
+                </td>
+            </ng-container>
+
+            <ng-container matColumnDef='email'>
+                <th mat-header-cell *matHeaderCellDef>Email</th>
+                <td mat-cell *matCellDef="let user">
+                    {{ user.email }}
+                </td>
+            </ng-container>
+
+            <ng-container matColumnDef='telephone'>
+                <th mat-header-cell *matHeaderCellDef>Телефон</th>
+                <td mat-cell *matCellDef="let user">
+                    {{ user.telephone }}
+                </td>
+            </ng-container>
+
+            <ng-container matColumnDef='infoBaing'>
+                <th mat-header-cell *matHeaderCellDef>Покупки</th>
+                <td mat-cell *matCellDef="let user">
+                 <p *ngIf="user.purchase.length > 0"> Блок
+                     {{ user.purchase[0]['status'] }}
+                 </p>
+                    <p *ngIf="user.purchase.length > 0">
+                        {{ user.purchase[0]['created_at'] }}
+                    </p>
+                    <p class="paragrafBorder" *ngIf="user.purchase.length > 0">
+                        {{ user.purchase[0]['payment_system'] }}
+                    </p>
+
+                  <p *ngIf="user.purchase.length > 0"> Блок
+                      {{ user.purchase[1]['status'] }}
+                    </p>
+                    <p *ngIf="user.purchase.length > 0">
+                        {{ user.purchase[1]['created_at'] }}
+                    </p>
+                    <p *ngIf="user.purchase.length > 0">
+                        {{ user.purchase[1]['payment_system'] }}
+                    </p>
+                </td>
+            </ng-container>
+
+
+            <ng-container matColumnDef='createdAt'>
+                <th mat-header-cell *matHeaderCellDef>Регистрация</th>
+                <td mat-cell *matCellDef="let user">
+                    {{ user.created_at }}
+                </td>
+            </ng-container>
+
+
+
+            <tr mat-header-row *matHeaderRowDef="columns; sticky: true"></tr>
+            <tr mat-row *matRowDef="let row; columns: columns;"></tr>
+        </table>
+    </mat-tab>
+
+    <mat-tab label="Все">
+        <ng-template mat-tab-label>
+            Все ({{ users.length }})
+        </ng-template>
+
+        <div class="view">
+
+            <table mat-table [dataSource]="users">
+
+                <ng-container matColumnDef='user' sticky>
+                    <th mat-header-cell *matHeaderCellDef>Имя</th>
+                    <td mat-cell *matCellDef="let user">
+                        {{ user.name + ' ' + user.last_name }}
+                    </td>
+                </ng-container>
+
+                <ng-container matColumnDef='email'>
+                    <th mat-header-cell *matHeaderCellDef>Email</th>
+                    <td mat-cell *matCellDef="let user">
+                        {{ user.email }}
+                    </td>
+                </ng-container>
+
+                <ng-container matColumnDef='telephone'>
+                    <th mat-header-cell *matHeaderCellDef>Телефон</th>
+                    <td mat-cell *matCellDef="let user">
+                        {{ user.telephone }}
+                    </td>
+                </ng-container>
+
+                <ng-container matColumnDef='infoBaing'>
+                    <th mat-header-cell *matHeaderCellDef>Покупки</th>
+                    <td mat-cell *matCellDef="let user">
+                    <p *ngIf="user.purchase.length > 0"> Блок
+                            {{ user.purchase[0]['status'] }}
+                        </p>
+                        <p *ngIf="user.purchase.length > 0">
+                            {{ user.purchase[0]['created_at'] }}
+                        </p>
+                        <p class="paragrafBorder" *ngIf="user.purchase.length > 0">
+                            {{ user.purchase[0]['payment_system'] }}
+                        </p>
+
+                       <p *ngIf="user.purchase.length > 0"> Блок
+                           {{ user.purchase[1]['status'] }}
+                        </p>
+                        <p *ngIf="user.purchase.length > 0">
+                            {{ user.purchase[1]['created_at'] }}
+                        </p>
+                        <p *ngIf="user.purchase.length > 0">
+                            {{ user.purchase[1]['payment_system'] }}
+                        </p>
+
+                    </td>
+                </ng-container>
+
+                <ng-container matColumnDef='createdAt'>
+                    <th mat-header-cell *matHeaderCellDef>Регистрация</th>
+                    <td mat-cell *matCellDef="let user">
+                        {{ user.created_at }}
+                    </td>
+                </ng-container>
+
+                <tr mat-header-row
+                    *matHeaderRowDef="columns; sticky: true"></tr>
+                <tr mat-row *matRowDef="let row; columns: columns;"></tr>
+            </table>
+
+        </div>
+
+    </mat-tab>
+
+
+</mat-tab-group>
+
+

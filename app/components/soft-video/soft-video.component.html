@@ -1,0 +1,144 @@
+<app-content-page></app-content-page>
+
+<mat-toolbar>
+  <div class="example-container">
+    <h2>Добавление видео для начинающих</h2>
+    <form [formGroup]="sendVideo" (ngSubmit)="submit()" >
+      <mat-form-field>
+        <input matInput type="text" class="form-control" formControlName="name"
+               placeholder="Название видео">
+
+      <!--  <ng-container *ngIf="hasError('name', 'requiredValueInput')">
+
+          <i
+                  class="material-icons"  (click)="controlClear( 'name' )"  >
+            cancel_presentation
+          </i>
+        </ng-container>
+        -->
+      </mat-form-field>
+      <div class="invalid-feedback" style="display: block">
+        <ng-container *ngIf="hasError('name', 'required')">Заполните поле
+        </ng-container>
+      </div>
+      <mat-form-field class="hideInput">
+        <input matInput type="text" class="form-control"
+               formControlName="status"
+               placeholder="Статус видео" >
+      </mat-form-field>
+
+      <mat-form-field>
+        <input matInput type="text" class="form-control"
+               formControlName="description"
+               placeholder="Описание видео">
+
+      <!--  <ng-container *ngIf="hasError('description', 'requiredValueInput')">
+
+          <i
+                  class="material-icons"  (click)="controlClear( 'description' )"  >
+            cancel_presentation
+          </i>
+        </ng-container>
+        -->
+      </mat-form-field>
+      <div class="invalid-feedback" style="display: block">
+        <ng-container *ngIf="hasError('description', 'required')">Заполните поле
+        </ng-container>
+      </div>
+      <app-file-upload formControlName="video_url"
+                       [progress]="progress"></app-file-upload>
+      <div class="invalid-feedback" style="display: block">
+        <ng-container
+                *ngIf="hasError('video_url', 'required')">Выберите файл
+        </ng-container>
+        <ng-container
+                *ngIf="hasError('video_url', 'requiredFileType')">Только
+          форматы видео MP4
+        </ng-container>
+      </div>
+    </form>
+    <button mat-button (click)="submit()" (click)="returnHide()" type="submit"
+            class="btn btn-primary">Отправить
+    </button>
+  </div>
+
+</mat-toolbar>
+
+
+
+<div class="videoCard">
+  <mat-card class="example-card" *ngFor=" let video of newarray;
+    let idx = index;  trackBy:
+  trackByFn " >
+    <mat-card-header>
+      <div mat-card-avatar class="example-header-image"></div>
+      <mat-card-title  >Название: {{ video.name }}
+      </mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+      <video src="{{ video.video_url }}"
+             controls></video>
+    </mat-card-content>
+    <mat-card-content>
+      <p >Описание:
+        {{ video.description }}
+
+      </p>
+    </mat-card-content>
+    <div class="example-container2"
+         *ngIf="hideMe[idx]"
+         [formGroup]="formEdit" (ngSubmit)="onSubmit( video.id, selectedIdx)">
+      <mat-form-field>
+        <input  type="text" class="form-control"
+                [(ngModel)]="video.name"
+                name="title" matInput placeholder="Изменить название"
+                formControlName="title">
+      </mat-form-field>
+      <div class="error" *ngIf="isControlInvalid('title')">
+        Заполните название.
+      </div>
+      <mat-form-field>
+                    <textarea   type="text"
+                                class="form-control" matInput
+                                name="description"
+                                placeholder="Изменить описание"
+                                [(ngModel)]="video.description"
+
+                                formControlName="description"></textarea>
+      </mat-form-field>
+      <div class="error" *ngIf="isControlInvalid('description')">
+        Заполните описание.
+      </div>
+
+      <button class="confirmButton" mat-button type="button"
+              (click)="hideMe[idx] = !hideMe[idx]"
+              (click)="editVideo( video.id, video.name, video.description )">
+        Подтвердить
+      </button>
+      <button class="confirmButton" type="button"
+              mat-button
+              (click)="getVideos()"
+
+              (click)="hideMe[idx] = !hideMe[idx]">
+        Отмена
+      </button>
+
+    </div>
+    <mat-card-actions>
+      <button type="button"
+              mat-button *ngIf="!hideMe[idx]"
+              (click)="returnHide()"
+              (click)="getVideos()"
+              (click)="hideMe[idx] = !hideMe[idx]">
+        Изменить
+      </button>
+      <button type="button"
+              mat-button *ngIf="!hideMe[idx]"
+              (click)="returnHide()"
+              (click)="openDialog( video.id, idx )">
+        Удалить
+      </button>
+    </mat-card-actions>
+  </mat-card>
+
+</div>

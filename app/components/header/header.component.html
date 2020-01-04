@@ -1,0 +1,43 @@
+<ngx-loading-bar></ngx-loading-bar>
+<mat-toolbar>
+    <div *ngIf="!isMenuVisible">
+        Панель администратора
+    </div>
+
+    <div>
+        <!---->
+    </div>
+
+    <div *ngIf="isVisible" ngClass.xs="hide">
+        <a routerLink="/change">
+            <button mat-button>
+                Изменить пароль
+            </button>
+        </a>
+        <a routerLink="/login" (click)="logout()">
+            <button mat-button>Выйти</button>
+        </a>
+    </div>
+
+    <div ngClass.gt-xs="hide" class="menuBtn" (click)="toggleMenu()">
+        <i class="material-icons" *ngIf="!isMenuVisible">
+            menu
+        </i>
+        <i class="material-icons" *ngIf="isMenuVisible">
+            clear
+        </i>
+    </div>
+
+    <div class="menuBlock" *ngIf="isMenuVisible">
+        <a routerLink="/change">
+            <button mat-button>
+                Изменить пароль
+            </button>
+        </a>
+        <a routerLink="/login" (click)="logout()">
+            <button mat-button>Выйти</button>
+        </a>
+    </div>
+
+</mat-toolbar>
+

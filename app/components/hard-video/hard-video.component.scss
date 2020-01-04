@@ -1,0 +1,175 @@
+
+* {
+  box-sizing: border-box;
+}
+
+.example-container {
+  display: flex;
+  flex-direction: column;
+  width: 30%;
+}
+.example-container2 {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+.example-container > * {
+  width: 100%;
+}
+input.ng-touched.ng-invalid{
+  border-color: red;
+}
+form {
+  display: flex;
+  flex-direction: column;
+}
+.addFile {
+  display: flex;
+  flex-direction: column;
+}
+.mat-toolbar {
+  width: auto;
+  height: auto;
+}
+mat-card-title {
+  font-family: SansSerif;
+  font-size: 14px;
+}
+h2  {
+  margin-top: 5px;
+  text-transform: uppercase;
+  font-weight: bolder;
+  font-size: 20px;
+}
+button {
+  background: #7c7db3;
+  margin-top: 15px;
+  margin-bottom: 10px;
+  width: 30%;
+  color: white;
+}
+.invalid-feedback {
+  margin-top: 5px;
+  width: 100%;
+  height: auto;
+  padding: 5px;
+  text-align: start;
+  color: red;
+  font-size: 15px;
+}
+
+.videoCard {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.mat-card {
+  width: 30%;
+}
+.mat-card-content {
+  width: 100%;
+  height: auto;
+}
+video {
+  width: 100%;
+  height: 56%;
+}
+.example-card {
+  margin: 10px;
+  width: 40%;
+}
+.example-container {
+  display: flex;
+  flex-direction: column;
+}
+.hideEditField {
+  display: none;
+}
+
+.confirmButton {
+  width: auto;
+}
+input.example-right-align::-webkit-outer-spin-button,
+input.example-right-align::-webkit-inner-spin-button {
+  display: none;
+}
+.hideInput {
+  display: none;
+}
+input.example-right-align {
+  -moz-appearance: textfield;
+}
+input.ng-touched.ng-invalid{
+  border-color: red;
+}
+
+.error{
+  margin-top: 10px;
+  margin-bottom: 10px;
+  color: red;
+}
+.clear {
+  margin: 0;
+  padding: 0;
+  width: auto;
+  height: 40px;
+  color: black;
+  background: rgba(246, 246, 246, 0.5);
+}
+@media only screen and (max-width: 1000px) {
+
+  button {
+    font-size: 16px;
+  }
+}
+@media only screen and (max-width: 800px) {
+  .videoCard {
+    display: flex;
+    flex-direction: column;
+  }
+  .example-card {
+    margin: 10px;
+    width: 100%;
+  }
+  button {
+
+    font-size: 16px;
+  }
+  .example-container {
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+  }
+}
+@media only screen and (max-width: 660px) {
+  input {
+    font-size: 12px;
+  }
+  button {
+    font-size: 14px;
+  }
+  .example-container {
+    display: flex;
+    flex-direction: column;
+    width: 70%;
+  }
+}
+@media only screen and (max-width: 450px) {
+  h2  {
+    text-transform: uppercase;
+    font-weight: bolder;
+    font-size: 16px;
+  }
+  button {
+    font-size: 14px;
+  }
+  .example-container {
+    display: flex;
+    flex-direction: column;
+    width: 90%;
+  }
+}
+
+

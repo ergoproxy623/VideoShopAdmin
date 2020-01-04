@@ -1,0 +1,95 @@
+
+* {
+  box-sizing: border-box;
+}
+
+.example-container {
+  display: flex;
+  flex-direction: column;
+  width: 30%;
+}
+
+.example-container > * {
+  width: 100%;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+}
+
+.mat-toolbar {
+  width: auto;
+  height: auto;
+}
+h2  {
+  margin-top: 5px;
+  text-transform: uppercase;
+  font-weight: bolder;
+  font-size: 20px;
+}
+button {
+  background: #7c7db3;
+  margin-top: 15px;
+  margin-bottom: 10px;
+  color: white;
+}
+iframe {
+  width: 100%;
+  height: 56vw;
+  margin-top: 50px;
+
+}
+
+
+.error {
+
+  color: red;
+  font-size: 15px;
+
+}
+.iframeWindow {
+  margin: 0 auto;
+  width: 85%;
+}
+.clear {
+  margin: 0;
+  padding: 0;
+  width: auto;
+  height: 40px;
+  color: black;
+  background: rgba(246, 246, 246, 0.5);
+}
+@media only screen and (max-width: 1000px) {
+  .example-container {
+    display: flex;
+    flex-direction: column;
+    width: 30%;
+  }
+}
+@media only screen and (max-width: 800px) {
+  .example-container {
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+  }
+}
+@media only screen and (max-width: 600px) {
+  .example-container {
+    display: flex;
+    flex-direction: column;
+    width: 70%;
+  }
+}
+@media only screen and (max-width: 450px) {
+  .example-container {
+    display: flex;
+    flex-direction: column;
+    width: 90%;
+  }
+  h2  {
+    text-transform: uppercase;
+    font-weight: bolder;
+    font-size: 16px;
+  }
+}

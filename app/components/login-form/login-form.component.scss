@@ -1,0 +1,191 @@
+.mat-card {
+  margin: 50px auto;
+  width: 400px;
+}
+
+.mat-card-title {
+  text-align: center;
+}
+
+.mat-card-content {
+  //width: 350px;
+  height: auto;
+}
+
+.mat-form-field {
+  width: 100%;
+}
+
+button {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  background: #888888;
+  margin-right: auto;
+}
+
+.eyeBtn {
+  display: flex;
+  justify-content: center;
+}
+
+.resetPassLink {
+  cursor: pointer;
+  text-decoration: underline;
+}
+:hover.resetPassLink {
+  color: blue;
+}
+
+.button {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+
+input {
+  width: 350px;
+}
+
+.checkbox {
+  margin: 10px;
+}
+
+a {
+  display: block;
+  text-align: center;
+}
+
+.example-container {
+  display: flex;
+  flex-direction: column;
+  width: 70%;
+}
+
+.example-container > * {
+  width: 100%;
+}
+
+.example-right-align {
+  text-align: right;
+}
+
+input.example-right-align::-webkit-outer-spin-button,
+input.example-right-align::-webkit-inner-spin-button {
+  display: none;
+}
+
+input.example-right-align {
+  -moz-appearance: textfield;
+}
+
+input.ng-touched.ng-invalid {
+  border-color: red;
+}
+
+.error {
+  margin-top: 10px;
+  margin-bottom: 10px;
+  padding: 5px;
+  height: 30px;
+  color: red;
+  font-size: 15px;
+  border: 2px solid red;
+  border-radius: 5%;
+}
+
+.visibility {
+  display: none;
+}
+
+@media only screen and (max-width: 450px) {
+  .mat-card {
+    width: 320px;
+  }
+  .mat-card-content {
+  }
+  .mat-form-field {
+  }
+  button {
+  }
+  .eyeBtn {
+  }
+  .resetPassLink {
+  }
+  .button {
+  }
+  input {
+  }
+  .checkbox {
+  }
+  a {
+  }
+  .example-container {
+  }
+
+  .example-container > * {
+  }
+
+  .example-right-align {
+  }
+
+  input.example-right-align::-webkit-outer-spin-button,
+  input.example-right-align::-webkit-inner-spin-button {
+  }
+
+  input.example-right-align {
+  }
+  input.ng-touched.ng-invalid {
+  }
+
+  .error {
+  }
+  .visibility {
+  }
+}
+
+@media only screen and (max-width: 450px) {
+  .mat-card {
+  }
+  .mat-card-content {
+  }
+  .mat-form-field {
+  }
+  button {
+  }
+  .eyeBtn {
+  }
+  .resetPassLink {
+  }
+  .button {
+  }
+  input {
+  }
+  .checkbox {
+  }
+  a {
+  }
+  .example-container {
+  }
+
+  .example-container > * {
+  }
+
+  .example-right-align {
+  }
+
+  input.example-right-align::-webkit-outer-spin-button,
+  input.example-right-align::-webkit-inner-spin-button {
+  }
+
+  input.example-right-align {
+  }
+  input.ng-touched.ng-invalid {
+  }
+
+  .error {
+  }
+  .visibility {
+  }
+}

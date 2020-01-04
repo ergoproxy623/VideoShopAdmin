@@ -1,0 +1,41 @@
+.mat-button-toggle-group {
+  width: 100%;
+}
+.mat-button-toggle {
+  width: 33%;
+  text-align: center;
+}
+nav {
+  width: 100%;
+}
+a {
+  width: 33%;
+  font-size: 15px;
+  border-left-right: 3px solid black;
+}
+.active {
+  border-bottom: 3px solid blue;
+  transition: 2ms;
+
+}
+.mat-tab-group.mat-primary .mat-ink-bar,.mat-tab-nav-bar.mat-primary .mat-ink-bar {
+  background-color: #ffad8b;
+}
+mat-ink-bar {
+  background-color: #ffad8b;
+}
+@media only screen and (max-width: 900px) {
+  a {
+    font-size: 14px;
+  }
+}
+@media only screen and (max-width: 700px) {
+  a {
+    font-size: 13px;
+  }
+}
+@media only screen and (max-width: 500px) {
+  a {
+    font-size: 12px;
+  }
+}

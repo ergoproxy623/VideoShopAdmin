@@ -1,0 +1,47 @@
+mat-toolbar {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  text-align: center;
+  border-radius: 2%;
+}
+
+button {
+  background: grey;
+}
+button:hover {
+  color: aquamarine;
+}
+.hide {
+  display: none;
+}
+
+a {
+  margin: 10px;
+  color: #f6f6f6;
+}
+
+div {
+  display: flex;
+  flex-direction: row;
+}
+
+.hide {
+  display: none;
+}
+
+.menuBtn {
+  padding: 10px 0 10px 10px;
+
+}
+
+.menuBlock {
+  position: fixed;
+  right: 45px;
+}
+
+@media only screen and (max-width: 599px) {
+  .menuBlock {
+
+  }
+}

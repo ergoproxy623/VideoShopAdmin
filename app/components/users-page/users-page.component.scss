@@ -1,0 +1,96 @@
+table {
+  width: 100%;
+}
+
+.view {
+  height: 80vh;
+  overflow: auto;
+}
+.paragrafBorder {
+  border-bottom: 1px solid #e0e0e0;
+}
+p {
+  padding: 2px;
+}
+
+
+th.mat-column-user {
+  //width: 20px;
+  padding-right: 5px;
+  font-size: 15px;
+  border-right: 1px solid #e0e0e0;
+  font-size: 15px;
+  font-weight: bolder;
+}
+
+td.mat-column-user {
+  //width: 20px;
+  padding-right: 5px;
+  border-right: 1px solid #e0e0e0;
+}
+
+th.mat-column-email {
+  //width: 20px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-right: 1px solid #e0e0e0;
+  font-size: 15px;
+  font-weight: bolder;
+
+}
+
+td.mat-column-email {
+  //width: 20px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-right: 1px solid #e0e0e0;
+}
+
+th.mat-column-telephone {
+  //width: 20px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-right: 1px solid #e0e0e0;
+  font-size: 15px;
+  font-weight: bolder;
+}
+
+td.mat-column-telephone {
+  //width: 20px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-right: 1px solid #e0e0e0;
+}
+
+th.mat-column-infoBaing {
+  min-width: 105px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-right: 1px solid #e0e0e0;
+  font-size: 15px;
+  font-weight: bolder;
+}
+
+td.mat-column-infoBaing {
+  //width: 20px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-right: 1px solid #e0e0e0;
+}
+
+th.mat-column-createdAt {
+  min-width: 105px;
+  padding-left: 5px;
+  padding-right: 5px;
+  font-size: 15px;
+  font-weight: bolder;
+}
+
+td.mat-column-createdAt {
+  //width: 20px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+mat-ink-bar {
+  background-color: #3b6b0c;
+}

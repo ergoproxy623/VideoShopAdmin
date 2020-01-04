@@ -1,0 +1,258 @@
+
+* {
+  box-sizing: border-box;
+}
+
+.example-container {
+  display: flex;
+  flex-direction: column;
+  width: 30%;
+}
+.example-container2 {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+.example-container > * {
+  width: 100%;
+}
+input.ng-touched.ng-invalid{
+  border-color: red;
+}
+form {
+  display: flex;
+  flex-direction: column;
+}
+.addFile {
+  display: flex;
+  flex-direction: column;
+}
+.mat-toolbar {
+  width: auto;
+  height: auto;
+}
+mat-card-title {
+  font-family: SansSerif;
+  font-size: 14px;
+}
+h2  {
+  margin-top: 5px;
+  text-transform: uppercase;
+  font-weight: bolder;
+  font-size: 20px;
+}
+button {
+  background: #7c7db3;
+  margin-top: 15px;
+  margin-bottom: 10px;
+  width: 30%;
+  color: white;
+  font-size: 14px;
+}
+.clear {
+  margin: 0;
+  padding: 0;
+  width: auto;
+  height: 40px;
+  color: black;
+  background: rgba(246, 246, 246, 0.5);
+}
+.invalid-feedback {
+  margin-top: 5px;
+  width: 100%;
+  height: auto;
+  padding: 5px;
+  text-align: start;
+  color: red;
+  font-size: 15px;
+}
+
+.videoCard {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.mat-card {
+  width: 30%;
+}
+.mat-card-content {
+  width: 100%;
+  height: auto;
+}
+
+.fontImg {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+  width: 100%;
+  height: 25vw;
+  background-color: rgba(8, 10, 107, 0.3);
+  border-radius: 5px;
+}
+img {
+margin: 0 auto;
+  max-width: 24vw;
+  max-height: 24vw;
+
+}
+.example-card {
+  margin: 10px;
+  width: 30%;
+}
+.example-container {
+  display: flex;
+  flex-direction: column;
+}
+.example-container2 {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+.hideEditField {
+  display: none;
+}
+
+input.example-right-align::-webkit-outer-spin-button,
+input.example-right-align::-webkit-inner-spin-button {
+  display: none;
+}
+
+input.example-right-align {
+  -moz-appearance: textfield;
+}
+input.ng-touched.ng-invalid{
+  border-color: red;
+}
+
+.error{
+  margin-top: 10px;
+  margin-bottom: 10px;
+  color: red;
+}
+.mat-card-actions {
+  margin-left: 1px;
+  width: 100%;
+}
+.buttonWidth {
+  width: auto;
+}
+@media only screen and (max-width: 1050px) {
+
+  .mat-card-actions {
+    width: 100%;
+  }
+
+  .example-container2 {
+    width: 100%;
+  }
+  button {
+    font-size: 9px;
+  }
+  .example-container {
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+  }
+  img {
+
+    max-width: 22vw;
+    max-height: 22vw;
+
+  }
+}
+@media only screen and (max-width: 800px) {
+  .fontImg {
+    padding: 10px;
+    width: 100%;
+    height: 35vw;
+    background-color: rgba(8, 10, 107, 0.3);
+    border-radius: 5px;
+  }
+  .videoCard {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  .mat-card-actions {
+    width: 100%;
+  }
+  .example-card {
+    margin: 10px;
+    width: 40%;
+  }
+.example-container2 {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+  button {
+    font-size: 10px;
+  }
+  img {
+
+    max-width: 30vw;
+    max-height: 30vw;
+
+  }
+  .example-container {
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+  }
+}
+@media only screen and (max-width: 660px) {
+  .videoCard {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  .fontImg {
+    padding: 10px;
+    width: 100%;
+    height: 85vw;
+    background-color: rgba(48, 48, 107, 0.3);
+    border-radius: 5px;
+  }
+  img {
+    max-width: 80vw;
+    max-height: 80vw;
+
+  }
+.example-card {
+  margin: 10px;
+  width: 100%;
+}
+  input {
+    font-size: 12px;
+  }
+  button {
+    font-size: 12px;
+  }
+  .example-container {
+    display: flex;
+    flex-direction: column;
+    width: 70%;
+  }
+}
+@media only screen and (max-width: 450px) {
+  h2  {
+    text-transform: uppercase;
+    font-weight: bolder;
+    font-size: 16px;
+  }
+  button {
+    font-size: 12px;
+  }
+  .example-container {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+  }
+}
+
+

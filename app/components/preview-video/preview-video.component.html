@@ -1,0 +1,49 @@
+<app-switch-info></app-switch-info>
+
+<mat-toolbar>
+  <div class="example-container">
+    <h2>Добавление ссылки плейлиста</h2>
+    <form *ngIf="!successKey" >
+      <mat-form-field>
+        <input type="url" matInput
+               placeholder="Добавить URL"
+               [(ngModel)]="fullUrl"
+               name="url"
+               id="URL">
+      </mat-form-field>
+      <button mat-button type="button" (click)="addPreview()"
+      >Добавить</button>
+    </form>
+      <form [formGroup]="formUpd" (ngSubmit)="onSubmitUpd()">
+        <mat-form-field>
+            <input type="url" matInput
+                   placeholder="Обновить URL"
+                   [(ngModel)]="updUrl"
+                   name="updUrl"
+                   id="URL2"
+                   formControlName="updUrl"
+                   (keyup)="clearField($event)"   >
+            <button class="clear" mat-button *ngIf="hide" type="button"
+                  (click)="clearFieldValue($event)"><i class="material-icons">
+cancel_presentation
+</i>
+            </button>
+        </mat-form-field>
+        <div class="error" *ngIf="isControlInvalidUpd('updUrl')">
+            Неправильный или пустой URL.
+        </div>
+      <button mat-button type="submit"
+             >Обновить</button>
+    </form>
+
+  </div>
+
+</mat-toolbar>
+
+
+<div class="iframeWindow" *ngIf="successKey">
+  <iframe  [src]="previewUrl" frameborder="0"
+          allow="autoplay; encrypted-media" allowfullscreen></iframe>
+</div>
+
+

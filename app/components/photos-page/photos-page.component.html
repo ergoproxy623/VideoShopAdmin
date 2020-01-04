@@ -1,0 +1,118 @@
+<app-switch-info></app-switch-info>
+
+
+<mat-toolbar>
+    <div class="example-container">
+        <h2>Добавление фото</h2>
+        <form [formGroup]="sendImage" (ngSubmit)="submit()">
+            <mat-form-field>
+
+                <input matInput type="text" class="form-control"
+                       formControlName="name"
+                       placeholder="Название картинки"
+                >
+
+
+             <!--   <ng-container *ngIf="!hasError('name',
+             'requiredValueInput')">
+
+                    <i class="material-icons" (click)="controlClear(
+                            'name' )">
+                        cancel_presentation</i>
+                </ng-container>
+-->
+
+            </mat-form-field>
+            <div class="invalid-feedback" style="display: block">
+                <ng-container *ngIf="hasError('name', 'required')">Это
+                    поле
+                    обязательно
+                </ng-container>
+            </div>
+            <app-file-upload formControlName="image_url"
+                             [progress]="progress"></app-file-upload>
+            <div class="invalid-feedback" style="display: block">
+                <ng-container
+                        *ngIf="hasError('image_url', 'required')">Это
+                    поле обязательно
+                </ng-container>
+                <ng-container
+                        *ngIf="hasError('image_url', 'requiredFileType')">Только
+                    форматы картинок JPG , PNG
+                </ng-container>
+            </div>
+        </form>
+        <button mat-button (click)="submit()" (click)="returnHide()"
+                type="submit"
+                class="btn btn-primary">Отправить
+        </button>
+    </div>
+
+</mat-toolbar>
+
+<div class="videoCard">
+    <mat-card class="example-card" *ngFor=" let photo of newarray;
+    let idx = index;  trackBy:
+  trackByFn ">
+        <mat-card-header>
+            <div mat-card-avatar class="example-header-image"></div>
+            <mat-card-title name="title">Название: {{ photo.name }}
+            </mat-card-title>
+        </mat-card-header>
+        <mat-card-content>
+            <div class="fontImg">
+                <img src="{{ photo.image_url }}">
+            </div>
+
+        </mat-card-content>
+
+        <div class="example-container2"
+             *ngIf="hideMe[idx]"
+             [formGroup]="formEditPhoto" (ngSubmit)="onSubmit( photo.id, idx)">
+            <mat-form-field>
+                <input type="text" class="form-control"
+                       [(ngModel)]="photo.name"
+                       name="title" matInput placeholder="Изменить название"
+                       formControlName="title">
+            </mat-form-field>
+            <div class="error" *ngIf="isControlInvalid('title')">
+                Введите название
+            </div>
+
+            <button mat-button class="buttonWidth"
+                    (click)="hideMe[idx] = !hideMe[idx]"
+                    (click)="editPhoto( photo.id, photo.name
+                     )">
+                Подтвердить
+            </button>
+            <button
+                    mat-button class="buttonWidth"
+                    (click)="getPhotos()"
+                    (click)="hideMe[idx] = !hideMe[idx]">
+                Отмена
+            </button>
+
+        </div>
+        <mat-card-actions>
+            <button
+                    mat-button *ngIf="!hideMe[idx]"
+                    (click)="returnHide()"
+                    (click)="getPhotos()"
+                    (click)="hideMe[idx] = !hideMe[idx]">
+                Изменить
+            </button>
+            <button
+                    mat-button *ngIf="!hideMe[idx]"
+                    (click)="hideMe[idx]"
+                    (click)="openDialog( photo.id, idx )"
+                    (click)="returnHide()"
+            >
+
+                Удалить
+            </button>
+        </mat-card-actions>
+
+    </mat-card>
+
+</div>
+

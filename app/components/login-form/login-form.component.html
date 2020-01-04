@@ -1,0 +1,66 @@
+<ngx-loading-bar></ngx-loading-bar>
+<mat-card>
+    <mat-card-title>Логин</mat-card-title>
+    <mat-card-content>
+        <form [formGroup]="formAdmin" (ngSubmit)="onSubmit()">
+            <mat-form-field>
+                <input type="text" name="email" matInput
+                       [(ngModel)]="email"
+                       placeholder="Логин или email"
+                       id="login" formControlName="login">
+            </mat-form-field>
+            <div class="error" *ngIf="isControlInvalid('login')">
+                Неверно введен логин
+            </div>
+            <mat-form-field>
+                <input matInput name="password" [(ngModel)]="password"
+                       placeholder="Пароль"
+                       [type]="hide ? 'password' : 'text'" id="password"
+                       formControlName="password">
+                <button mat-icon-button type="button" matSuffix (click)="hide = !hide"
+                        [attr.aria-label]="'Hide password'"
+                        [attr.aria-pressed]="hide"
+                        class="eyeBtn">
+                    <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+                </button>
+
+            </mat-form-field>
+            <div class="error" *ngIf="isControlInvalid('password')">
+                Слишком короткий пароль
+            </div>
+            <div class="checkbox">
+                <mat-checkbox
+                        type="checkbox"
+                        (click)="saveDestination()"
+                        name="checkAddress">
+                    Запомнить меня
+                </mat-checkbox>
+            </div>
+            <div class="button">
+                <button type="submit"
+                        mat-button>
+                    Логин
+                </button>
+                <a
+                        [ngClass]="{hideEmailForm: visibility}"
+                        (click)="hideForm()"
+                        class="resetPassLink">
+                    Сбросить пароль?
+                </a>
+            </div>
+            <mat-form-field *ngIf="visibility">
+                <input matInput type="text" placeholder="Write your email"
+                       id="email"
+                       formControlName="email" [(ngModel)]="email">
+            </mat-form-field>
+            <div class="error" *ngIf="isControlInvalid('email')">
+                Неверно введен email
+            </div>
+            <button mat-button *ngIf="visibility"
+                    (click)="hideForm()"
+                    (click)="resetPassword()">
+                Отправить
+            </button>
+        </form>
+    </mat-card-content>
+</mat-card>
