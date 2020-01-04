@@ -1,0 +1,43 @@
+<mat-accordion class="mat-app-background">
+
+    <mat-expansion-panel *ngFor="let user of users">
+        <mat-expansion-panel-header>
+            <mat-panel-title>
+                {{ user.firstName + ' ' + user.middleName + ' ' + user.lastName }}
+            </mat-panel-title>
+            <mat-panel-description>
+                {{ user.email }}
+            </mat-panel-description>
+        </mat-expansion-panel-header>
+
+        <table mat-table [dataSource]="user.payments">
+
+            <ng-container matColumnDef='date'>
+                <th mat-header-cell *matHeaderCellDef>Дата</th>
+                <td mat-cell *matCellDef="let payment">
+                    {{ payment.date | date: 'dd-MM-yyyy' }}
+                </td>
+            </ng-container>
+
+            <ng-container matColumnDef='payment'>
+                <th mat-header-cell *matHeaderCellDef>Оплата</th>
+                <td mat-cell *matCellDef="let payment">
+                    {{ payment.payment }}
+                </td>
+            </ng-container>
+
+            <ng-container matColumnDef='contentTitle'>
+                <th mat-header-cell *matHeaderCellDef>Контент</th>
+                <td mat-cell *matCellDef="let payment">
+                    {{ payment.contentTitle }}
+                </td>
+            </ng-container>
+
+            <tr mat-header-row
+                *matHeaderRowDef="columns"></tr>
+            <tr mat-row *matRowDef="let row; columns: columns;"></tr>
+        </table>
+
+    </mat-expansion-panel>
+
+</mat-accordion>

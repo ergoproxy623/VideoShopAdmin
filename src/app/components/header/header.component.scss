@@ -1,0 +1,10 @@
+mat-toolbar {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  text-align: center;
+  border-radius: 2%;
+}
+button {
+  background: grey;
+}

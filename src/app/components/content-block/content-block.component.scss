@@ -1,0 +1,33 @@
+
+* {
+  box-sizing: border-box;
+}
+.mat-grid-list {
+  width: 100%;
+  border: 3px solid #888888;
+}
+.mat-grid-tile {
+  height: 100px;
+  background: #888888;
+}
+.example-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.example-container > * {
+  width: 100%;
+}
+.mat-grid-tile {
+  margin-right: 10px;
+}
+button {
+  background: #46e7ff;
+}
+img {
+  width: 200px;
+
+}
+.hideEditField {
+  display: none;
+}

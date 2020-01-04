@@ -1,0 +1,10 @@
+<!--The content below is only a placeholder and can be replaced.-->
+<app-header></app-header>
+  <mat-button-toggle-group  name="fontStyle" aria-label="Font Style">
+    <mat-button-toggle value="bold"><a routerLink="/users" >Users</a></mat-button-toggle>
+    <mat-button-toggle value="italic"><a routerLink="/content" routerLinkActive="active">Content</a></mat-button-toggle>
+  </mat-button-toggle-group>
+<app-login-form></app-login-form>
+
+
+<router-outlet></router-outlet>
